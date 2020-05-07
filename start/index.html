@@ -9,18 +9,19 @@
   <body>
       <div id="root"></div>
       <script type="text/babel">
-          const Hello = ({library, message}) => {
-            console.log(props)
-            return (
-              <div>
-                <h1>Welcome to {library}</h1>
-                <p>{message}</p>
-              </div>
-            )
-          } ;
+          const Lake = ({name}) => <h1>Hi {name}</h1>;
+
+          const App = () => (
+            <div>
+              <Lake name="Lake Tahoe" />
+              <Lake name="Angora Lake" />
+              <Lake name="Shirley Lake" />
+              <Lake name="Cathedral Lake" />
+            </div>
+          );
 
           ReactDOM.render(
-            <Hello library="Angular" message="Enjoy!" />,
+            <App />,
             document.getElementById("root")
           )
       </script>   
