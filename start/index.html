@@ -9,30 +9,17 @@
   <body>
       <div id="root"></div>
       <script type="text/babel">
-          const Lake = ({name}) => <h1>Hi {name}</h1>;
+          const Lake = ({name}) => <h1>{name}</h1>;
+          const SkiResort = ({name}) => <h1>{name}</h1>;
 
-          class App extends React.Component {
-            state = {
-              loggedIn: false
-            }
-            // Add login function
-            login = () =>this.setState({loggedIn:true});
+          const App = ({summer}) => (
+            <div>
+                {summer ? <Lake name="Lake Tahoe" /> : <SkiResort name="Alpine Meadows" />}
+            </div>
+          )
 
-            render() {
-              return (
-                <div>
-                <button onClick={this.login}>Log In</button>
-                  <div> The user is {this.state.loggedIn ? "logged in" : "not logged in"}. </div>
-                  <Lake name="Lake Tahoe" />
-                  <Lake name="Angora Lake" />
-                  <Lake name="Shirley Lake" />
-                  <Lake name="Cathedral Lake" />
-                </div>
-              )
-            }
-          }          
           ReactDOM.render(
-            <App />,
+            <App summer={false} />,
             document.getElementById("root")
           )
       </script>   
