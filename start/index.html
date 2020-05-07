@@ -10,17 +10,16 @@
       <div id="root"></div>
       <script type="text/babel">
           const lakeList = [
-            "Echo Lake",
-            "Maud Lake",
-            "Cascade Lake"
-          ]
+           {id:1, name: "Echo Lake", trailHead: "Echo Lake"},
+           {id:2, name: "Maud Lake", trailHead: "Echo Lake"},
+           {id:3, name: "Cascade Lake", trailHead: "Echo Lake"}            
+          ];
+
           const App = ({lakes}) => (
             <ul>
-                {
-                  lakes.map((lake, i) =>
-                    <li key={i}>{lake}</li>
-                  )
-                }
+                {lakes.map((lake) =>
+                    <li key={lake.id}>{lake.name} | Trailhead: {lake.trailhead}</li>
+                )}
             </ul>
           )
 
